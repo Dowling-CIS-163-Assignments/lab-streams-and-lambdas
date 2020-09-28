@@ -58,7 +58,7 @@ public class StudentListAnswers {
 
 
 		/*********************************************************************
-		 * TODO 3: Complete this an inner class to sort by
+		 * TODO 3: Complete this inner class to sort by
 		 * phone number.
 		 */
 		Collections.sort(friends, new Comparator<Student>() {
