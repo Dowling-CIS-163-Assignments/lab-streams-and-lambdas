@@ -79,7 +79,7 @@ public class StudentListAnswers {
 				int compareLastName = o1.getLastName().compareTo(o2.getLastName());
 				if (compareLastName == 0) {
 					return o1.getFirstName().compareTo(
-							o1.getFirstName());
+							o2.getFirstName());
 				} else {
 					return compareLastName;
 				}
@@ -104,7 +104,7 @@ public class StudentListAnswers {
 					o2.getLastName());
 			if (compareLastName == 0) {
 				return o1.getFirstName().compareTo(
-						o1.getFirstName());
+						o2.getFirstName());
 			} else {
 				return compareLastName;
 			}
@@ -121,7 +121,7 @@ public class StudentListAnswers {
 		ArrayList<Student> lista = (ArrayList<Student>) friends.stream()
 				.filter(arg -> arg.getLastName().equals("Barnes"))
 				.collect(Collectors.toList());
-		System.out.println("TODO 7" + friends);
+		System.out.println("TODO 7" + lista);
 
 
 		/*********************************************************************
@@ -132,7 +132,7 @@ public class StudentListAnswers {
 		ArrayList<Student> listb = (ArrayList<Student>) friends.stream()
 				.filter(arg -> arg.getPhone().contains("610"))
 				.collect(Collectors.toList());
-		System.out.println("TODO 8" + friends);
+		System.out.println("TODO 8" + listb);
 
 
 		/*********************************************************************
@@ -141,12 +141,17 @@ public class StudentListAnswers {
 		 */
 		ArrayList<Student> listc = (ArrayList<Student>) friends.stream()
 				.map(arg -> {
+					
+					// Note: This is changing the original Student object
 					arg.setFirstName(arg.getFirstName().toUpperCase());
 					arg.setLastName(arg.getLastName().toUpperCase());
 					return arg;
 				})
 				.collect(Collectors.toList());
-		System.out.println("TODO 9" + friends);
+		
+		// Note: You could instead print friends and get the same result
+		// because we changed the original Student objects
+		System.out.println("TODO 9" + listc);
 
 
 		/*********************************************************************
